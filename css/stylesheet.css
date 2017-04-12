@@ -69,7 +69,7 @@ hr {
     width: 100%;
 }
 
-#wswe-text-preview {
+.text-preview {
     display: none;
     position: absolute;
     bottom: 0;
@@ -79,7 +79,7 @@ hr {
 	height: auto;
 }
 
-#wswe-thumb:hover + #wswe-text-preview {
+.p-thumb-img:hover + .text-preview {
     display: block;
 }
 

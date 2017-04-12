@@ -3,7 +3,7 @@ var view = (function() {
 
     // on page load
     window.onload = function scheduler(e) {
-        loadProjectGallery();
+        document.dispatchEvent(new CustomEvent('onDocumentLoaded'));
     };
 
     /** Listeners **/
@@ -25,36 +25,65 @@ var view = (function() {
 
 
 
-/** View methods */
-var view = {};
+    /** View methods */
+    var view = {};
 
-view.hideProjectThumbnails = function() {
-    var projectThumbnails = document.getElementById('project-thumbnails');
-    projectThumbnails.className = "animated fadeOut";
-    projectThumbnails.style.visibility = "hidden";
-};
+    view.hideProjectThumbnails = function() {
+        var projectThumbnails = document.getElementById('project-thumbnails');
+        projectThumbnails.className = "animated fadeOut";
+        projectThumbnails.style.visibility = "hidden";
+    };
 
-view.showProjectThumbnails = function() {
-    var projectThumbnails = document.getElementById('project-thumbnails');
-    projectThumbnails.style.visibility = "visible";
-    projectThumbnails.className = "animated fadeIn";
-    loadProjectGallery();
-};
+    view.showProjectThumbnails = function() {
+        var projectThumbnails = document.getElementById('project-thumbnails');
+        projectThumbnails.style.visibility = "visible";
+        projectThumbnails.className = "animated fadeIn";
+        loadProjectGallery();
+    };
 
-view.createProjectPage = function(data) {
-    var newID = data.id;
-    var thumbnailRef = data.project.thumbnail;
-    var title = data.project.title;
-    var desc = data.project.description;
-    var url = data.project.url;
-    var altName = newID.concat("_preview");
+    view.loadProjectThumbnails = function(data) {
 
-    var content = `<div class='row animated zoomIn'>
-                        	<div class='col-xs-12'>
-	                        	 <button type="button" class="close pull-left" aria-label="Close" id="project-exit">
-	  								<span aria-hidden="true">&times;</span>
-								</button>
-                        	</div>
+        var content = ``;
+        var dataKeys = Object.keys(data);
+        console.log(data);
+        console.log(dataKeys);
+        console.log(data[dataKeys[0]]['title']);
+
+        for (var i = 0; i < dataKeys.length; i++) {
+            var newID = dataKeys[i];;
+            var title = data[dataKeys[i]]['title'];
+            var thumbnailRef = data[dataKeys[i]]['thumbnail'];
+            var altName = title.concat("_preview");
+
+            content += `<div class='col-xs-12 col-md-6 project-preview-thumb' id='${newID}'>
+                            <img class="img-responsive p-thumb-img" id='${newID}-thumb' src="${thumbnailRef}" alt="${altName}">
+                            <div class='text-preview' >${title}</div>
+                        </div>`;
+
+
+        }
+
+        var thumbnailPreview = document.getElementById('project-thumbnails');
+        thumbnailPreview.innerHTML = content;
+
+        loadProjectGallery();
+
+    };
+
+    view.createProjectPage = function(data) {
+        var newID = data.id;
+        var thumbnailRef = data.project.thumbnail;
+        var title = data.project.title;
+        var desc = data.project.description;
+        var url = data.project.url;
+        var altName = newID.concat("_preview");
+
+        var content = `<div class='row animated fadeIn'>
+                            <div class='col-xs-12'>
+                                 <button type="button" class="close pull-left" aria-label="Close" id="project-exit">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                             <div class='col-xs-12'>
                                 <div class='row'>
                                     <div class='col-xs-12'>
@@ -73,38 +102,38 @@ view.createProjectPage = function(data) {
                                     </div>
                                 </div>
                             </div>
-                        </div>`
+                        </div>`;
 
 
-    var projectPreview = document.getElementById('project-preview');
-    projectPreview.innerHTML = content;
-    projectPreview.style.visibility = "visible";
+        var projectPreview = document.getElementById('project-preview');
+        projectPreview.innerHTML = content;
+        projectPreview.style.visibility = "visible";
 
-    // hide url if there is none
-    if (url) {
-        var projectLink = document.getElementById('project-link');
-        projectLink.style.visibility = "visible";
-    } else {
-        var projectLink = document.getElementById('project-link');
-        projectLink.style.visibility = "hidden";
-    }
+        // hide url if there is none
+        if (url) {
+            var projectLink = document.getElementById('project-link');
+            projectLink.style.visibility = "visible";
+        } else {
+            var projectLink = document.getElementById('project-link');
+            projectLink.style.visibility = "hidden";
+        }
 
-    // add event listener for exiting project preview
-    var exitProject = document.getElementById('project-exit').addEventListener('click', function() {
-        view.hideProjectPreview();
-    });
-
-
-
-};
-
-view.hideProjectPreview = function() {
-    var projectPreview = document.getElementById('project-preview');
-    projectPreview.innerHTML = ""
-    view.showProjectThumbnails();
-};
+        // add event listener for exiting project preview
+        var exitProject = document.getElementById('project-exit').addEventListener('click', function() {
+            view.hideProjectPreview();
+        });
 
 
-return view;
+
+    };
+
+    view.hideProjectPreview = function() {
+        var projectPreview = document.getElementById('project-preview');
+        projectPreview.innerHTML = ""
+        view.showProjectThumbnails();
+    };
+
+
+    return view;
 
 }());

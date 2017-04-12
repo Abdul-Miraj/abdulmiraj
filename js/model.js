@@ -11,7 +11,10 @@ var model = (function() {
     }
 
     model.init = function() {
-        return;
+        var pInfo = projectInfo.projects
+        document.dispatchEvent(new CustomEvent('onThumbnailsLoaded', {
+            'detail': pInfo
+        }));
     }
 
     model.loadProject = function(data) {

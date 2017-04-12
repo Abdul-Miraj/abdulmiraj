@@ -8,7 +8,7 @@ var projectInfo = {
         },
 
         "spotifyDJ": {
-            "thumbnail": null,
+            "thumbnail": "media/spotifydj_preview.jpg",
             "title": "spotifyDJ",
             "description": "A mobile Android application which allows multiple users to push songs to a single room and play all the user selected songs in a single spotify playlist",
 			"url": null
