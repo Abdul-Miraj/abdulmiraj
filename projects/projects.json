@@ -1,0 +1,18 @@
+var projectInfo = {
+    "projects": {
+        "wswe": {
+            "thumbnail": "media/wswe_preview.jpg",
+            "title": "Where Should We Eat?",
+            "description": "A single page NodeJS application structured using MVC which assists users to narrow down the type of food they would want to eat based of what nearby locations have to offer.",
+            "url": "https://whereshouldweeat.herokuapp.com/"
+        },
+
+        "spotifyDJ": {
+            "thumbnail": null,
+            "title": "spotifyDJ",
+            "description": "A mobile Android application which allows multiple users to push songs to a single room and play all the user selected songs in a single spotify playlist",
+			"url": null
+        }
+    }
+
+}

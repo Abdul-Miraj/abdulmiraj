@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Abdul R. Miraj</title>
+    <meta name='description' content='Personal website for Obaid Miraj'>
+    <meta name='author' content='Obaid Miraj'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Style Sheets -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+    <link rel='stylesheet' href='css/stylesheet.css'>
+    <!-- Javascript -->
+</head>
+
+<body>
+    <div class="flexbox-container" id='all-content'>
+        <div class='row'>
+            <div class='col-xs-12 col-md-6' id='intro'>
+                <div class='row'>
+                    <div class='col-xs-12' id='name-title'>
+                        <h1 class="animated fadeInDownBig">Abdul R. Miraj</h1>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-xs-12 animated fadeInLeft' id='autobiography-desc'>
+                        <p>Hi, I'm a <strong>software developer</strong> currently living in Toronto. This is where I showcase my projects and link anything cool I find on the internet.</p>
+                        <hr />
+                        <p> <i class="fa fa-envelope-o fa-lg contact-icons" aria-hidden="true"></i> <a href="mailto:abdulr.miraj@gmail.com">abdulr.miraj@gmail.com</a></p>
+                        <p><i class="fa fa-phone fa-lg contact-icons" aria-hidden="true"></i> 647-786-1665</p>
+                    </div>
+                </div>
+            </div>
+            <div class='col-xs-12 col-md-6' id='showcase'>
+                <div class='row animated fadeIn' id='projects'>
+                	<div class='col-xs-12 animated zoomIn' id='project-preview'>
+                	</div>
+                    <div id="project-thumbnails">
+                        <div class='col-xs-12 col-md-6 project-preview-thumb' id='wswe'>
+                            <img class="img-responsive" id='wswe-thumb' src="media/wswe_preview.jpg" alt="wswe_preview">
+                            <div class='text-preview' id='wswe-text-preview'>Where Should We Eat?</div>
+                        </div>
+                        <div class='col-xs-12 col-md-6 project-preview-thumb' id='spotifyDJ'>
+                            <img class="img-responsive" id='spotify-DJ-thumb' src="http://placehold.it/500x250" alt="spotify_DJ_preview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="social-media">
+            <a href='https://github.com/Abdul-Miraj'><i class="fa fa-github fa-2x s-media"></i></a>
+            <a href='https://www.linkedin.com/in/abdul-r-miraj-39b42385/'><i class="fa fa-linkedin-square fa-2x s-media"></i></a>
+        </div>
+    </footer>
+    <script type="text/javascript" src="projects/projects.json"></script>
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+
+</html>
