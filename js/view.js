@@ -55,7 +55,7 @@ var view = (function() {
             var thumbnailRef = data[dataKeys[i]]['thumbnail'];
             var altName = title.concat("_preview");
 
-            content += `<div class='col-xs-12 col-md-6 project-preview-thumb' id='${newID}'>
+            content += `<div class='col-xs-12 project-preview-thumb' id='${newID}'>
                             <img class="img-responsive p-thumb-img" id='${newID}-thumb' src="${thumbnailRef}" alt="${altName}">
                             <div class='text-preview' >${title}</div>
                         </div>`;
@@ -92,7 +92,7 @@ var view = (function() {
                                 </div>
                             </div>
                             <div class='col-xs-12'>
-                                <div class='row'>
+                                <div class='row' id='project-info'>
                                     <div class='col-xs-12'>
                                         <h5 id='project-title'><a href='${url}' target='_blank'><strong>${title}</strong></a></h5>
                                     </div>

@@ -13,10 +13,6 @@
     font-size: 1.5em;
 }
 
-#contact-info {
-    font-size: 0.8em;
-}
-
 .s-media {
     margin-right: 10px;
 }
@@ -36,8 +32,10 @@
 
 .project-preview-thumb {
     padding: 0;
-    width: 40%;
-    margin-right: 10%;
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 10px;
 }
 
 .text-preview {
@@ -54,6 +52,18 @@
     display: block;
 }
 
+#project-preview {
+    position: block;
+}
+
+#project-info {
+    font-size: 0.8em;
+}
+
+#contact-info {
+    font-size: 0.6em;
+}
+
 
 /* Custom, iPhone Retina */
 
@@ -61,8 +71,20 @@
     h1 {
         font-size: 2em;
     }
+    #contact-info {
+        font-size: 0.6em;
+    }
     #project-preview {
         position: block;
+    }
+    #project-info {
+        font-size: 0.8em;
+    }
+    .project-preview-thumb {
+        width: 70%;
+        margin-right: 15%;
+        margin-left: 15%;
+        margin-bottom: 10px;
     }
 }
 
@@ -74,22 +96,34 @@
 
 /* Small Devices, Tablets */
 
-@media only screen and (min-width: 768px) {
-    h1 {
-        font-size: 3em;
-    }
-}
+@media only screen and (min-width: 768px) {}
 
 
 /* Medium Devices, Desktops */
 
 @media only screen and (min-width: 992px) {
+    #contact-info {
+        font-size: 0.6em;
+    }
     #project-preview {
         position: absolute;
+    }
+    #contact-info {
+        font-size: 0.8em;
+    }
+    #project-info {
+        font-size: 1em;
     }
 }
 
 
 /* Large Devices, Wide Screens */
 
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+    .project-preview-thumb {
+        width: 40%;
+        margin-right: 10%;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+}
