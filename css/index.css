@@ -1,0 +1,95 @@
+.flexbox-container {
+    height: 95vh;
+    width: 60vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+}
+
+#autobiography-desc {
+    font-size: 1.5em;
+}
+
+#contact-info {
+    font-size: 0.8em;
+}
+
+.s-media {
+    margin-right: 10px;
+}
+
+.thumb {
+    margin-bottom: 5px;
+}
+
+.contact-icons {
+    margin-right: 3px;
+}
+
+.project-preview {
+    background-color: white;
+    width: 100%;
+}
+
+.project-preview-thumb {
+    padding: 0;
+    width: 40%;
+    margin-right: 10%;
+}
+
+.text-preview {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.p-thumb-img:hover + .text-preview {
+    display: block;
+}
+
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) {
+    h1 {
+        font-size: 2em;
+    }
+    #project-preview {
+        position: block;
+    }
+}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (min-width: 480px) {}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width: 992px) {
+    #project-preview {
+        position: absolute;
+    }
+}
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 1200px) {}

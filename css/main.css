@@ -1,0 +1,38 @@
+body {
+    background-color: white;
+}
+
+h1,
+p,
+a,
+a:hover {
+    font-family: 'Droid Sans', sans-serif;
+}
+
+a,
+a:hover {
+    color: black;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    background-color: #dfe3ee;
+}
+
+hr {
+    border-color: #dfe3ee;
+    /* chrome safari */
+    background-color: #dfe3ee;
+    /* firefox opera */
+    color: #dfe3ee;
+    /* IE7 */
+}
